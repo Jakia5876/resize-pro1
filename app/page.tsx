@@ -203,7 +203,7 @@ export default function Home() {
               <div
                 key={tool.id}
                 className="bg-white rounded-lg border border-gray-200 p-6 hover:border-gray-300 hover:shadow-md transition-all cursor-pointer group"
-                onClick={() => router.push('/app')}
+                onClick={() => router.push(`/tools/${tool.id}`)}
               >
                 {tool.isNew && (
                   <div className="inline-block bg-blue-100 text-blue-700 text-xs font-semibold px-3 py-1 rounded-full mb-4">
