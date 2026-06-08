@@ -27,7 +27,7 @@ export default function Home() {
               />
               <div className="flex flex-col">
                 <span className="text-sm font-bold leading-tight">A3M IT TECH</span>
-                <span className="text-xs text-muted-foreground">Resize Pro</span>
+                <span className="text-2xl font-bold text-red-500" style={{ fontFamily: 'var(--font-dm-sans)' }}>Resize Pro</span>
               </div>
             </Link>
             <Button 
@@ -193,7 +193,7 @@ export default function Home() {
               />
               <div className="flex flex-col">
                 <span className="text-sm font-bold leading-tight">A3M IT TECH</span>
-                <span className="text-xs text-muted-foreground">Resize Pro</span>
+                <span className="text-2xl font-bold text-red-500" style={{ fontFamily: 'var(--font-dm-sans)' }}>Resize Pro</span>
               </div>
             </div>
             <div className="flex gap-6 text-sm">
