@@ -2,7 +2,7 @@
 
 import { Button } from '@/components/ui/button'
 import { InstructionsModal } from '@/components/instructions-modal'
-import { ArrowRight, Image as ImageIcon, Zap, Download } from 'lucide-react'
+import { ArrowRight, Image as ImageIcon, Zap, Download, Star } from 'lucide-react'
 import Link from 'next/link'
 import { useRouter } from 'next/navigation'
 
@@ -82,6 +82,71 @@ export default function Home() {
                 </div>
                 <h3 className="text-lg font-semibold mb-2">{feature.title}</h3>
                 <p className="text-muted-foreground">{feature.description}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Reviews Section */}
+      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-background">
+        <div className="mx-auto max-w-6xl">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold mb-4">Loved by Creators</h2>
+            <p className="text-muted-foreground max-w-2xl mx-auto">
+              See what designers, developers, and content creators have to say about Resize Pro
+            </p>
+          </div>
+          <div className="grid md:grid-cols-3 gap-6">
+            {[
+              {
+                name: "Sarah Chen",
+                role: "Graphic Designer",
+                content: "Resize Pro has cut my image processing time in half. The batch processing is incredible and I love that everything stays private.",
+                rating: 5
+              },
+              {
+                name: "Marcus Johnson",
+                role: "Content Creator",
+                content: "Finally, a tool that just works. No ads, no sign-ups, no nonsense. Perfect for preparing images for social media.",
+                rating: 5
+              },
+              {
+                name: "Elena Rodriguez",
+                role: "Web Developer",
+                content: "The client-side processing is exactly what I needed. Fast, reliable, and no server costs. Highly recommended!",
+                rating: 5
+              },
+              {
+                name: "Alex Kim",
+                role: "Photographer",
+                content: "The preset sizes for social platforms are so handy. Saves me time when preparing shots for Instagram and Pinterest.",
+                rating: 5
+              },
+              {
+                name: "Jordan Blake",
+                role: "E-commerce Manager",
+                content: "Processing hundreds of product images is now effortless. The quality preservation is outstanding.",
+                rating: 5
+              },
+              {
+                name: "Sophie Martin",
+                role: "Freelance Designer",
+                content: "Clean interface, powerful features, lightning-fast processing. This is my go-to tool for image resizing.",
+                rating: 5
+              }
+            ].map((review, idx) => (
+              <div key={idx} className="p-6 rounded-lg bg-card border border-border hover:border-accent/50 transition-colors">
+                <div className="flex gap-1 mb-4">
+                  {[...Array(review.rating)].map((_, i) => (
+                    <Star key={i} className="w-4 h-4 fill-accent text-accent" />
+                  ))}
+                </div>
+                <p className="text-foreground mb-4 leading-relaxed">"{review.content}"</p>
+                <div>
+                  <p className="font-semibold">{review.name}</p>
+                  <p className="text-sm text-muted-foreground">{review.role}</p>
+                </div>
               </div>
             ))}
           </div>
