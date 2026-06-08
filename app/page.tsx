@@ -5,6 +5,7 @@ import { InstructionsModal } from '@/components/instructions-modal'
 import { ArrowRight, Image as ImageIcon, Zap, Download, Star } from 'lucide-react'
 import Link from 'next/link'
 import { useRouter } from 'next/navigation'
+import Image from 'next/image'
 
 export default function Home() {
   const router = useRouter()
@@ -15,12 +16,20 @@ export default function Home() {
       <nav className="sticky top-0 z-50 border-b border-border bg-background/95 backdrop-blur">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-16">
-            <div className="flex items-center gap-2">
-              <div className="w-8 h-8 rounded bg-accent flex items-center justify-center">
-                <ImageIcon className="w-5 h-5 text-accent-foreground" />
+            <Link href="/" className="flex items-center gap-3">
+              <Image
+                src="/a3m-logo.png"
+                alt="A3M IT TECH Logo"
+                width={40}
+                height={40}
+                className="h-10 w-auto"
+                priority
+              />
+              <div className="flex flex-col">
+                <span className="text-sm font-bold leading-tight">A3M IT TECH</span>
+                <span className="text-xs text-muted-foreground">Resize Pro</span>
               </div>
-              <span className="text-xl font-bold">Resize Pro</span>
-            </div>
+            </Link>
             <Button 
               onClick={() => router.push('/app')}
               className="bg-accent hover:bg-accent/90 text-accent-foreground"
@@ -171,13 +180,30 @@ export default function Home() {
       </section>
 
       {/* Footer */}
-      <footer className="border-t border-border py-8 px-4 sm:px-6 lg:px-8 bg-card/50">
-        <div className="mx-auto max-w-6xl flex flex-col sm:flex-row justify-between items-center gap-4 text-sm text-muted-foreground">
-          <p>&copy; 2026 Resize Pro. All rights reserved.</p>
-          <div className="flex gap-6">
-            <Link href="#" className="hover:text-foreground transition-colors">Privacy</Link>
-            <Link href="#" className="hover:text-foreground transition-colors">Terms</Link>
-            <Link href="#" className="hover:text-foreground transition-colors">Support</Link>
+      <footer className="border-t border-border py-12 px-4 sm:px-6 lg:px-8 bg-card/50">
+        <div className="mx-auto max-w-6xl">
+          <div className="flex flex-col sm:flex-row justify-between items-start gap-8 mb-8">
+            <div className="flex items-center gap-3">
+              <Image
+                src="/a3m-logo.png"
+                alt="A3M IT TECH Logo"
+                width={40}
+                height={40}
+                className="h-10 w-auto"
+              />
+              <div className="flex flex-col">
+                <span className="text-sm font-bold leading-tight">A3M IT TECH</span>
+                <span className="text-xs text-muted-foreground">Resize Pro</span>
+              </div>
+            </div>
+            <div className="flex gap-6 text-sm">
+              <Link href="#" className="text-muted-foreground hover:text-foreground transition-colors">Privacy</Link>
+              <Link href="#" className="text-muted-foreground hover:text-foreground transition-colors">Terms</Link>
+              <Link href="#" className="text-muted-foreground hover:text-foreground transition-colors">Support</Link>
+            </div>
+          </div>
+          <div className="border-t border-border pt-8 text-center text-sm text-muted-foreground">
+            <p>&copy; 2026 A3M IT TECH - Resize Pro. All rights reserved.</p>
           </div>
         </div>
       </footer>
