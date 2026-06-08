@@ -1,7 +1,7 @@
 'use client'
 
 import { Button } from '@/components/ui/button'
-import { ArrowRight, Image as ImageIcon, Minimize2, Palette, Layers, Sparkles, Wand2, Grid, FileText, Maximize2, Zap, Lock, RotateCw } from 'lucide-react'
+import { ArrowRight, Image as ImageIcon, Minimize2, Palette, Layers, Sparkles, Wand2, Grid, FileText, Maximize2, Zap, Lock, RotateCw, Type } from 'lucide-react'
 import Link from 'next/link'
 import { useRouter } from 'next/navigation'
 import Image from 'next/image'
@@ -110,6 +110,16 @@ export default function Home() {
       color: 'bg-lime-100',
       iconColor: 'text-lime-600',
       category: 'optimize',
+      isNew: true
+    },
+    {
+      id: 'picture-to-text',
+      name: 'Picture to Text',
+      description: 'Extract text from images using OCR technology',
+      icon: <Type className="w-8 h-8" />,
+      color: 'bg-teal-100',
+      iconColor: 'text-teal-600',
+      category: 'convert',
       isNew: true
     }
   ]
