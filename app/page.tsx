@@ -431,23 +431,23 @@ export default function Home() {
       <nav className="sticky top-0 z-50 border-b border-border bg-white">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-16">
-            <Link href="/" className="flex items-center gap-3">
+            <Link href="/" className="flex items-center gap-2 sm:gap-3">
               <Image
                 src="/a3m-logo.png"
                 alt="A3M IT TECH Logo"
                 width={40}
                 height={40}
-                className="h-10 w-auto"
+                className="h-8 sm:h-10 w-auto"
                 priority
               />
               <div className="flex flex-col">
-                <span className="text-sm font-bold leading-tight text-gray-900">A3M IT TECH</span>
-                <span className="font-bold text-accent leading-tight" style={{ fontFamily: 'var(--font-dm-sans)', fontSize: '24px', fontWeight: 700 }}>Resize Pro</span>
+                <span className="text-xs sm:text-sm font-bold leading-tight text-gray-900">A3M IT TECH</span>
+                <span className="font-bold text-accent leading-tight text-lg sm:text-2xl" style={{ fontFamily: 'var(--font-dm-sans)', fontWeight: 700 }}>Resize Pro</span>
               </div>
             </Link>
             <Button 
               onClick={() => router.push('/app')}
-              className="bg-accent hover:bg-accent/90 text-white rounded-lg px-6"
+              className="bg-accent hover:bg-accent/90 text-white rounded-lg px-3 sm:px-6 text-sm sm:text-base"
             >
               Open Tool
             </Button>
@@ -456,24 +456,24 @@ export default function Home() {
       </nav>
 
       {/* Hero Section */}
-      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-white border-b border-gray-200">
+      <section className="py-8 sm:py-12 lg:py-16 px-4 sm:px-6 lg:px-8 bg-white border-b border-gray-200">
         <div className="mx-auto max-w-6xl">
-          <div className="text-center mb-12">
-            <h1 className="text-4xl sm:text-5xl font-bold mb-4 text-gray-900">
+          <div className="text-center mb-8 sm:mb-12">
+            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4 text-gray-900">
               Every tool you need to work with images in one place
             </h1>
-            <p className="text-gray-600 text-lg">
+            <p className="text-gray-600 text-base sm:text-lg">
               All the tools you need to resize, compress, convert, and optimize images. All 100% FREE and easy to use. Resize, compress, convert, rotate, unlock and watermark images with just a few clicks.
             </p>
           </div>
 
           {/* Filter Tabs */}
-          <div className="flex flex-wrap gap-3 justify-center mb-8">
+          <div className="flex flex-wrap gap-2 sm:gap-3 justify-center mb-8">
             {categories.map((category) => (
               <button
                 key={category.id}
                 onClick={() => setActiveCategory(category.id)}
-                className={`px-4 py-2 rounded-full text-sm font-medium transition-colors ${
+                className={`px-3 sm:px-4 py-1.5 sm:py-2 rounded-full text-xs sm:text-sm font-medium transition-colors ${
                   activeCategory === category.id
                     ? 'bg-gray-900 text-white'
                     : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
@@ -487,13 +487,13 @@ export default function Home() {
       </section>
 
       {/* Tools Grid */}
-      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-gray-50">
+      <section className="py-8 sm:py-12 lg:py-16 px-4 sm:px-6 lg:px-8 bg-gray-50">
         <div className="mx-auto max-w-7xl">
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4 sm:gap-6">
             {filteredTools.map((tool) => (
               <div
                 key={tool.id}
-                className="bg-white rounded-lg border border-gray-200 p-6 hover:border-gray-300 hover:shadow-md transition-all cursor-pointer group"
+                className="bg-white rounded-lg border border-gray-200 p-4 sm:p-6 hover:border-gray-300 hover:shadow-md transition-all cursor-pointer group"
                 onClick={() => router.push(`/tools/${tool.id}`)}
               >
                 {tool.isNew && (
