@@ -1,7 +1,7 @@
 'use client'
 
 import { Button } from '@/components/ui/button'
-import { ArrowRight, Image as ImageIcon, Minimize2, Palette, Layers, Sparkles, Wand2, Grid, FileText, Maximize2, Zap, Lock, RotateCw, Type } from 'lucide-react'
+import { ArrowRight, Image as ImageIcon, Minimize2, Palette, Layers, Sparkles, Wand2, Grid, FileText, Maximize2, Zap, Lock, RotateCw, Type, Combine, Split, File, FileJson, Shield, Stamp, Scan, DivideIcon, MessageSquare, Copy, CheckCircle, Languages } from 'lucide-react'
 import Link from 'next/link'
 import { useRouter } from 'next/navigation'
 import Image from 'next/image'
@@ -121,6 +121,296 @@ export default function Home() {
       iconColor: 'text-teal-600',
       category: 'convert',
       isNew: true
+    },
+    {
+      id: 'merge-pdf',
+      name: 'Merge PDF',
+      description: 'Combine multiple PDFs into a single document',
+      icon: <Combine className="w-8 h-8" />,
+      color: 'bg-red-100',
+      iconColor: 'text-red-600',
+      category: 'edit',
+      isNew: false
+    },
+    {
+      id: 'split-pdf',
+      name: 'Split PDF',
+      description: 'Separate pages or split PDF into multiple files',
+      icon: <Split className="w-8 h-8" />,
+      color: 'bg-orange-100',
+      iconColor: 'text-orange-600',
+      category: 'edit',
+      isNew: false
+    },
+    {
+      id: 'compress-pdf',
+      name: 'Compress PDF',
+      description: 'Reduce PDF file size while maintaining quality',
+      icon: <Minimize2 className="w-8 h-8" />,
+      color: 'bg-green-100',
+      iconColor: 'text-green-600',
+      category: 'optimize',
+      isNew: false
+    },
+    {
+      id: 'pdf-to-word',
+      name: 'PDF to Word',
+      description: 'Convert PDF documents to editable Word format',
+      icon: <FileJson className="w-8 h-8" />,
+      color: 'bg-blue-100',
+      iconColor: 'text-blue-600',
+      category: 'convert',
+      isNew: false
+    },
+    {
+      id: 'pdf-to-ppt',
+      name: 'PDF to PowerPoint',
+      description: 'Convert PDF to editable PowerPoint presentations',
+      icon: <Palette className="w-8 h-8" />,
+      color: 'bg-red-100',
+      iconColor: 'text-red-600',
+      category: 'convert',
+      isNew: false
+    },
+    {
+      id: 'pdf-to-excel',
+      name: 'PDF to Excel',
+      description: 'Extract data from PDF into Excel spreadsheets',
+      icon: <Grid className="w-8 h-8" />,
+      color: 'bg-green-100',
+      iconColor: 'text-green-600',
+      category: 'convert',
+      isNew: false
+    },
+    {
+      id: 'word-to-pdf',
+      name: 'Word to PDF',
+      description: 'Convert Word documents to PDF format',
+      icon: <File className="w-8 h-8" />,
+      color: 'bg-blue-100',
+      iconColor: 'text-blue-600',
+      category: 'convert',
+      isNew: false
+    },
+    {
+      id: 'ppt-to-pdf',
+      name: 'PowerPoint to PDF',
+      description: 'Convert presentations to PDF documents',
+      icon: <File className="w-8 h-8" />,
+      color: 'bg-orange-100',
+      iconColor: 'text-orange-600',
+      category: 'convert',
+      isNew: false
+    },
+    {
+      id: 'excel-to-pdf',
+      name: 'Excel to PDF',
+      description: 'Convert spreadsheets to PDF format',
+      icon: <File className="w-8 h-8" />,
+      color: 'bg-green-100',
+      iconColor: 'text-green-600',
+      category: 'convert',
+      isNew: false
+    },
+    {
+      id: 'edit-pdf',
+      name: 'Edit PDF',
+      description: 'Add text, images, and shapes to PDF documents',
+      icon: <Wand2 className="w-8 h-8" />,
+      color: 'bg-purple-100',
+      iconColor: 'text-purple-600',
+      category: 'edit',
+      isNew: false
+    },
+    {
+      id: 'pdf-to-jpg',
+      name: 'PDF to JPG',
+      description: 'Convert PDF pages to JPG images',
+      icon: <Image as ImageIcon className="w-8 h-8" />,
+      color: 'bg-yellow-100',
+      iconColor: 'text-yellow-600',
+      category: 'convert',
+      isNew: false
+    },
+    {
+      id: 'jpg-to-pdf',
+      name: 'JPG to PDF',
+      description: 'Convert images to PDF documents',
+      icon: <File className="w-8 h-8" />,
+      color: 'bg-yellow-100',
+      iconColor: 'text-yellow-600',
+      category: 'convert',
+      isNew: false
+    },
+    {
+      id: 'sign-pdf',
+      name: 'Sign PDF',
+      description: 'Add digital signatures to PDF documents',
+      icon: <CheckCircle className="w-8 h-8" />,
+      color: 'bg-blue-100',
+      iconColor: 'text-blue-600',
+      category: 'protect',
+      isNew: false
+    },
+    {
+      id: 'watermark-pdf',
+      name: 'Watermark PDF',
+      description: 'Add watermarks to protect your PDFs',
+      icon: <Stamp className="w-8 h-8" />,
+      color: 'bg-purple-100',
+      iconColor: 'text-purple-600',
+      category: 'protect',
+      isNew: false
+    },
+    {
+      id: 'rotate-pdf',
+      name: 'Rotate PDF',
+      description: 'Rotate pages in your PDF documents',
+      icon: <RotateCw className="w-8 h-8" />,
+      color: 'bg-cyan-100',
+      iconColor: 'text-cyan-600',
+      category: 'edit',
+      isNew: false
+    },
+    {
+      id: 'html-to-pdf',
+      name: 'HTML to PDF',
+      description: 'Convert web pages to PDF format',
+      icon: <FileJson className="w-8 h-8" />,
+      color: 'bg-yellow-100',
+      iconColor: 'text-yellow-600',
+      category: 'convert',
+      isNew: false
+    },
+    {
+      id: 'unlock-pdf',
+      name: 'Unlock PDF',
+      description: 'Remove password protection from PDFs',
+      icon: <Lock className="w-8 h-8" />,
+      color: 'bg-red-100',
+      iconColor: 'text-red-600',
+      category: 'protect',
+      isNew: false
+    },
+    {
+      id: 'protect-pdf',
+      name: 'Protect PDF',
+      description: 'Add password protection to PDF documents',
+      icon: <Shield className="w-8 h-8" />,
+      color: 'bg-green-100',
+      iconColor: 'text-green-600',
+      category: 'protect',
+      isNew: false
+    },
+    {
+      id: 'organize-pdf',
+      name: 'Organize PDF',
+      description: 'Rearrange, delete, or extract PDF pages',
+      icon: <Layers className="w-8 h-8" />,
+      color: 'bg-orange-100',
+      iconColor: 'text-orange-600',
+      category: 'edit',
+      isNew: false
+    },
+    {
+      id: 'repair-pdf',
+      name: 'Repair PDF',
+      description: 'Fix damaged or corrupted PDF files',
+      icon: <Sparkles className="w-8 h-8" />,
+      color: 'bg-green-100',
+      iconColor: 'text-green-600',
+      category: 'optimize',
+      isNew: false
+    },
+    {
+      id: 'page-numbers',
+      name: 'Page Numbers',
+      description: 'Add page numbers to PDF documents',
+      icon: <Copy className="w-8 h-8" />,
+      color: 'bg-yellow-100',
+      iconColor: 'text-yellow-600',
+      category: 'edit',
+      isNew: false
+    },
+    {
+      id: 'scan-to-pdf',
+      name: 'Scan to PDF',
+      description: 'Convert scanned documents to searchable PDFs',
+      icon: <Scan className="w-8 h-8" />,
+      color: 'bg-red-100',
+      iconColor: 'text-red-600',
+      category: 'convert',
+      isNew: false
+    },
+    {
+      id: 'ocr-pdf',
+      name: 'OCR PDF',
+      description: 'Extract text from scanned PDFs',
+      icon: <Type className="w-8 h-8" />,
+      color: 'bg-green-100',
+      iconColor: 'text-green-600',
+      category: 'convert',
+      isNew: false
+    },
+    {
+      id: 'compare-pdf',
+      name: 'Compare PDF',
+      description: 'Highlight differences between PDF documents',
+      icon: <DivideIcon className="w-8 h-8" />,
+      color: 'bg-blue-100',
+      iconColor: 'text-blue-600',
+      category: 'edit',
+      isNew: false
+    },
+    {
+      id: 'redact-pdf',
+      name: 'Redact PDF',
+      description: 'Permanently remove sensitive information',
+      icon: <Shield className="w-8 h-8" />,
+      color: 'bg-purple-100',
+      iconColor: 'text-purple-600',
+      category: 'protect',
+      isNew: false
+    },
+    {
+      id: 'crop-pdf',
+      name: 'Crop PDF',
+      description: 'Crop pages in PDF documents',
+      icon: <Grid className="w-8 h-8" />,
+      color: 'bg-orange-100',
+      iconColor: 'text-orange-600',
+      category: 'edit',
+      isNew: false
+    },
+    {
+      id: 'pdf-forms',
+      name: 'PDF Forms',
+      description: 'Fill and sign PDF forms online',
+      icon: <FileText className="w-8 h-8" />,
+      color: 'bg-purple-100',
+      iconColor: 'text-purple-600',
+      category: 'edit',
+      isNew: true
+    },
+    {
+      id: 'pdf-summarizer',
+      name: 'AI Summarizer',
+      description: 'Generate summaries of PDF content automatically',
+      icon: <MessageSquare className="w-8 h-8" />,
+      color: 'bg-indigo-100',
+      iconColor: 'text-indigo-600',
+      category: 'optimize',
+      isNew: true
+    },
+    {
+      id: 'translate-pdf',
+      name: 'Translate PDF',
+      description: 'Translate PDFs to multiple languages',
+      icon: <Languages className="w-8 h-8" />,
+      color: 'bg-cyan-100',
+      iconColor: 'text-cyan-600',
+      category: 'convert',
+      isNew: true
     }
   ]
 
@@ -129,6 +419,7 @@ export default function Home() {
     { id: 'resize', label: 'Resize' },
     { id: 'optimize', label: 'Optimize' },
     { id: 'convert', label: 'Convert' },
+    { id: 'edit', label: 'Edit' },
     { id: 'protect', label: 'Protect' }
   ]
 
